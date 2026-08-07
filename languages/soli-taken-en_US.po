@@ -1,0 +1,89 @@
+# Copyright (C) 2026 Joran Out
+# This file is distributed under the same license as the Soli Taken Plugin plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Soli Taken Plugin 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-soli-taken-plugin\n"
+"Last-Translator: Joran Out\n"
+"Language-Team: English (US)\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2026-08-07T19:44:58+00:00\n"
+"PO-Revision-Date: 2026-08-07 21:00+0100\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: soli-taken\n"
+
+#. Plugin Name of the plugin
+#: wp-soli-taken-plugin.php
+msgid "Soli Taken Plugin"
+msgstr "Soli Taken Plugin"
+
+#. Description of the plugin
+#: wp-soli-taken-plugin.php
+msgid "Members-only tasks (taken) post type for Soli sites, usable in the Query Loop block"
+msgstr "Members-only tasks (taken) post type for Soli sites, usable in the Query Loop block"
+
+#. Author of the plugin
+#: wp-soli-taken-plugin.php
+msgid "Joran Out"
+msgstr "Joran Out"
+
+#: includes/class-soli-taken-post-type.php:25
+#: build/index.js:1
+msgid "Taken"
+msgstr "Taken"
+
+#: includes/class-soli-taken-post-type.php:26
+msgid "Taak"
+msgstr "Taak"
+
+#: includes/class-soli-taken-post-type.php:27
+msgid "Add Taak"
+msgstr "Add Taak"
+
+#: includes/class-soli-taken-post-type.php:28
+msgid "Add New Taak"
+msgstr "Add New Taak"
+
+#: includes/class-soli-taken-post-type.php:29
+msgid "View Taak"
+msgstr "View Taak"
+
+#: includes/class-soli-taken-post-type.php:30
+msgid "Edit Taak"
+msgstr "Edit Taak"
+
+#: includes/class-soli-taken-post-type.php:31
+msgid "Insert into Taak"
+msgstr "Insert into Taak"
+
+#: includes/class-soli-taken-post-type.php:32
+msgid "Search Taken"
+msgstr "Search Taken"
+
+#: includes/class-soli-taken-post-type.php:33
+msgid "No Taken Found"
+msgstr "No Taken Found"
+
+#: includes/class-soli-taken-post-type.php:40
+msgid "Members-only tasks"
+msgstr "Members-only tasks"
+
+#: includes/class-soli-taken-visibility.php:80
+msgid "Taken are only visible to members. Please log in to view them."
+msgstr "Taken are only visible to members. Please log in to view them."
+
+#: includes/class-soli-taken-visibility.php:81
+msgid "Forbidden"
+msgstr "Forbidden"
+
+#: includes/class-soli-taken-visibility.php:107
+msgid "Taken are only visible to members."
+msgstr "Taken are only visible to members."
+
+#: build/index.js:1
+msgid "Displays the latest taken (members-only tasks)."
+msgstr "Displays the latest taken (members-only tasks)."
