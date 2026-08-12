@@ -20,7 +20,13 @@ const OWN_FILES =
 	/(Warning|Notice|Deprecated):[^\n]*(wp-soli-taken-plugin\.php|class-soli-taken-(post-type|visibility)\.php)/i;
 
 async function expectNoPhpErrors(page) {
-	const body = await page.locator('body').innerText();
+	// textContent(), never innerText(). innerText() reflects *rendered* text and
+	// silently skips anything hidden (display:none, collapsed panels, screens a
+	// script reveals later), so a PHP diagnostic emitted inside a hidden
+	// container makes these assertions pass for the wrong reason. Measured here:
+	// an undefined-variable warning echoed inside a display:none div fails 3
+	// tests with textContent and 0 with innerText. Do not change this back.
+	const body = await page.locator('body').textContent();
 	expect(body).not.toMatch(FATAL);
 	expect(body).not.toMatch(OWN_FILES);
 }
