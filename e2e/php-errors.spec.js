@@ -20,15 +20,39 @@ const OWN_FILES =
 	/(Warning|Notice|Deprecated):[^\n]*(wp-soli-taken-plugin\.php|class-soli-taken-(post-type|visibility)\.php)/i;
 
 async function expectNoPhpErrors(page) {
-	// textContent(), never innerText(). innerText() reflects *rendered* text and
+	// textContent, never innerText. innerText reflects *rendered* text and
 	// silently skips anything hidden (display:none, collapsed panels, screens a
 	// script reveals later), so a PHP diagnostic emitted inside a hidden
 	// container makes these assertions pass for the wrong reason. Measured here:
 	// an undefined-variable warning echoed inside a display:none div fails 3
 	// tests with textContent and 0 with innerText. Do not change this back.
-	const body = await page.locator('body').textContent();
-	expect(body).not.toMatch(FATAL);
-	expect(body).not.toMatch(OWN_FILES);
+	//
+	// The two patterns need different reads, so the body is read twice in one
+	// evaluate:
+	//
+	// - OWN_FILES matches within a single line ([^\n]*), and textContent also
+	//   returns the source text of <script> and <style>. wp-admin prints large
+	//   one-line JSON blobs into inline script, so a string containing
+	//   'Warning:' near a plugin path would match there and turn CI red for
+	//   nothing. That pattern must NOT see script text, so it reads a body
+	//   clone with script/style/template/noscript stripped.
+	// - FATAL must see script text. A fatal thrown while an inline script is
+	//   being printed lands inside that <script> node, and a stripped clone
+	//   would lose it. So it reads the full body.
+	const { full, markup } = await page.evaluate(() => {
+		const clone = document.body.cloneNode(true);
+		clone
+			.querySelectorAll('script, style, template, noscript')
+			.forEach((node) => node.remove());
+
+		return {
+			full: document.body.textContent || '',
+			markup: clone.textContent || '',
+		};
+	});
+
+	expect(full).not.toMatch(FATAL);
+	expect(markup).not.toMatch(OWN_FILES);
 }
 
 test.describe('renders without PHP errors', () => {
