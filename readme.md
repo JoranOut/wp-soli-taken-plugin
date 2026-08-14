@@ -1,10 +1,23 @@
+[![version](https://img.shields.io/github/package-json/v/JoranOut/wp-soli-taken-plugin?label=version&color=3858e9)](https://github.com/JoranOut/wp-soli-taken-plugin/releases)
+[![nightly](https://img.shields.io/github/v/release/JoranOut/wp-soli-taken-plugin?include_prereleases&label=nightly&color=fb8817)](https://github.com/JoranOut/wp-soli-taken-plugin/releases)
+[![tested up to](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.wordpress.org%2Fcore%2Fversion-check%2F1.7%2F&query=%24.offers%5B0%5D.current&label=tested%20up%20to&prefix=WP%20&color=40a8af)](https://wordpress.org/download/releases/)
+[![requires](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FJoranOut%2Fwp-soli-taken-plugin%2Fmain%2Fpackage.json&query=%24.wordpress.requiresAtLeast&label=requires&prefix=WP%20&color=40a8af)](https://wordpress.org/download/releases/)
+[![wp-env](https://img.shields.io/github/package-json/dependency-version/JoranOut/wp-soli-taken-plugin/dev/@wordpress/env?label=wp-env&color=40a8af)](https://www.npmjs.com/package/@wordpress/env)
+[![node](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FJoranOut%2Fwp-soli-taken-plugin%2Fmain%2Fpackage.json&query=%24.engines.node&label=node&color=43853d)](https://nodejs.org)
+[![license](https://img.shields.io/github/license/JoranOut/wp-soli-taken-plugin?color=blue)](LICENSE)
+
 # Soli Taken Plugin
 
 Members-only tasks (taken) post type for Soli sites.
 
+<!-- Machine-readable markers. publish.js reads the plugin name to name the zip,
+     and the nightly workflow rewrites the version here when packaging a build.
+     Kept in a comment because a single tilde renders as strikethrough on GitHub;
+     the badges above are the human-readable version. Do not reformat.
 ~Current Version:0.1.0~
 
 ~Plugin Name: wp-soli-taken-plugin~
+-->
 
 ## Description
 
@@ -28,5 +41,6 @@ Loop block, so editors can drop the latest taken on any (members) page.
 
 ## Requirements
 
-- WordPress 6.0+
+- WordPress 6.9+ (the oldest branch the e2e suite runs against; see
+  `wordpress.requiresAtLeast` in `package.json`)
 - PHP 8.2+
