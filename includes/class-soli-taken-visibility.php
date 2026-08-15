@@ -10,7 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Hides taken from not-logged-in visitors on every surface:
  *
  * - Query Loop blocks and other secondary WP_Query instances return nothing
- * - The single page and the post type archive respond with HTTP 403
+ * - The single page responds with HTTP 403; the archive is disabled
+ *   (has_archive => false), and a ?post_type= query gets the same 403
  * - The REST endpoints (collection and single) respond with HTTP 403
  *
  * Site search is handled in Post_Type via a per-request exclude_from_search.
