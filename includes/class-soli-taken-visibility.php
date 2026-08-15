@@ -65,15 +65,21 @@ class Visibility {
 	}
 
 	/**
-	 * 403 for logged-out visits to a single taak or the archive,
-	 * following the guard pattern in wp-soli-event-plugin.
+	 * 403 for logged-out visits to a single taak or any main query that
+	 * targets the post type (e.g. ?post_type=soli_taak), following the
+	 * guard pattern in wp-soli-event-plugin.
+	 *
+	 * With has_archive => false, WordPress does not flag a ?post_type=
+	 * request as a post type archive, so the query var is checked
+	 * directly — otherwise that URL would render as a 200 listing.
 	 */
 	public function guard_front_end() {
 		if ( is_admin() || is_user_logged_in() ) {
 			return;
 		}
 
-		if ( ! is_singular( Post_Type::POST_TYPE ) && ! is_post_type_archive( Post_Type::POST_TYPE ) ) {
+		$queried_types = (array) get_query_var( 'post_type' );
+		if ( ! is_singular( Post_Type::POST_TYPE ) && ! in_array( Post_Type::POST_TYPE, $queried_types, true ) ) {
 			return;
 		}
 
