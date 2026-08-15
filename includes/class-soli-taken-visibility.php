@@ -10,7 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Hides taken from not-logged-in visitors on every surface:
  *
  * - Query Loop blocks and other secondary WP_Query instances return nothing
- * - The single page and the post type archive respond with HTTP 403
+ * - The single page responds with HTTP 403; the archive is disabled
+ *   (has_archive => false), and a ?post_type= query gets the same 403
  * - The REST endpoints (collection and single) respond with HTTP 403
  *
  * Site search is handled in Post_Type via a per-request exclude_from_search.
@@ -64,15 +65,21 @@ class Visibility {
 	}
 
 	/**
-	 * 403 for logged-out visits to a single taak or the archive,
-	 * following the guard pattern in wp-soli-event-plugin.
+	 * 403 for logged-out visits to a single taak or any main query that
+	 * targets the post type (e.g. ?post_type=soli_taak), following the
+	 * guard pattern in wp-soli-event-plugin.
+	 *
+	 * With has_archive => false, WordPress does not flag a ?post_type=
+	 * request as a post type archive, so the query var is checked
+	 * directly — otherwise that URL would render as a 200 listing.
 	 */
 	public function guard_front_end() {
 		if ( is_admin() || is_user_logged_in() ) {
 			return;
 		}
 
-		if ( ! is_singular( Post_Type::POST_TYPE ) && ! is_post_type_archive( Post_Type::POST_TYPE ) ) {
+		$queried_types = (array) get_query_var( 'post_type' );
+		if ( ! is_singular( Post_Type::POST_TYPE ) && ! in_array( Post_Type::POST_TYPE, $queried_types, true ) ) {
 			return;
 		}
 

@@ -48,7 +48,7 @@ class Post_Type {
 			'menu_position'       => 6,
 			'menu_icon'           => 'dashicons-clipboard',
 			'can_export'          => true,
-			'has_archive'         => true,
+			'has_archive'         => false,
 			// Not-logged-in visitors may never find taken through site
 			// search; the flag is evaluated per request so members still can.
 			'exclude_from_search' => ! is_user_logged_in(),

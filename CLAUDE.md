@@ -31,7 +31,7 @@ plus one flag in `Post_Type`. Do not re-implement checks elsewhere.
 |---|---|---|
 | Query Loop / secondary WP_Query | empty | `pre_get_posts`: `post__in [0]`, or the post type is stripped from mixed-type queries |
 | Single page | HTTP 403 | `template_redirect` guard (`wp_die`), event-plugin pattern |
-| Archive | HTTP 403 | same guard |
+| Archive | disabled | `has_archive => false`; the pretty URL (`/taken/`) 404s, and a `?post_type=soli_taak` query still hits the same 403 guard |
 | Site search | hidden | `exclude_from_search => ! is_user_logged_in()` in the CPT registration (per request) |
 | REST collection + single | HTTP 403 | `rest_request_before_callbacks` on `/wp/v2/taken*` |
 
