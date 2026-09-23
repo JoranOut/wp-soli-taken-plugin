@@ -6,7 +6,7 @@ const PLUGIN_PATH = '/var/www/html/wp-content/plugins/wp-soli-taken-plugin';
  * Run a wp-cli command inside the tests instance (the one e2e runs against).
  */
 function wpCli(command) {
-	return execSync(`npx wp-env run tests-cli -- wp ${command}`, {
+	return execSync(`npx @wordpress/env run tests-cli -- wp ${command}`, {
 		encoding: 'utf8',
 	}).trim();
 }
