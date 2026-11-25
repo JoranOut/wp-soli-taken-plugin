@@ -31,6 +31,11 @@ only visible to logged-in members:
 The plugin adds a preconfigured **Taken** variation of the core Query
 Loop block, so editors can drop the latest taken on any (members) page.
 
+The **Taken A–Z** block is the members' search page: a central search bar
+over an alphabetical index of every taak, paginated by letter. A new taak
+starts from the **Taak** pattern, whose *when* and *contact* lines the
+index shows under each taak. With no search term it lists all taken.
+
 ## Features
 
 - `soli_taak` custom post type (title, editor, excerpt, featured image, revisions)

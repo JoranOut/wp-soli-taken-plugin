@@ -4,6 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Soli Taken Plugin 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-soli-taken-plugin\n"
+"POT-Creation-Date: 2026-11-24T14:04:49+00:00\n"
+"PO-Revision-Date: 2026-08-07 21:00+0100\n"
 "Last-Translator: Joran Out\n"
 "Language-Team: English (US)\n"
 "Language: en_US\n"
@@ -11,10 +13,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"POT-Creation-Date: 2026-08-07T19:44:58+00:00\n"
-"PO-Revision-Date: 2026-08-07 21:00+0100\n"
-"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: soli-taken\n"
+"X-Generator: WP-CLI 2.12.0\n"
 
 #. Plugin Name of the plugin
 #: wp-soli-taken-plugin.php
@@ -23,22 +23,138 @@ msgstr "Soli Taken Plugin"
 
 #. Description of the plugin
 #: wp-soli-taken-plugin.php
-msgid "Members-only tasks (taken) post type for Soli sites, usable in the Query Loop block"
-msgstr "Members-only tasks (taken) post type for Soli sites, usable in the Query Loop block"
+msgid ""
+"Members-only tasks (taken) post type for Soli sites, usable in the Query "
+"Loop block"
+msgstr ""
+"Members-only tasks (taken) post type for Soli sites, usable in the Query "
+"Loop block"
 
 #. Author of the plugin
 #: wp-soli-taken-plugin.php
 msgid "Joran Out"
 msgstr "Joran Out"
 
-#: includes/class-soli-taken-post-type.php:25
-#: build/index.js:1
+#: includes/class-soli-taken-index.php:45
+#: includes/class-soli-taken-visibility.php:114
+msgid "Taken are only visible to members."
+msgstr "Taken are only visible to members."
+
+#: includes/class-soli-taken-index.php:47
+msgid "Log in"
+msgstr "Log in"
+
+#. translators: %d: number of taken
+#: includes/class-soli-taken-index.php:244
+#, php-format
+msgid "%d taak"
+msgid_plural "All %d taken, alphabetical"
+msgstr[0] "%d taak"
+msgstr[1] "All %d taken, alphabetical"
+
+#. translators: 1: number of results, 2: search term
+#: includes/class-soli-taken-index.php:247
+#, php-format
+msgid "%1$d taak for “%2$s”"
+msgid_plural "%1$d taken for “%2$s”"
+msgstr[0] "%1$d taak for “%2$s”"
+msgstr[1] "%1$d taken for “%2$s”"
+
+#: includes/class-soli-taken-index.php:248
+msgid "Show all"
+msgstr "Show all"
+
+#: includes/class-soli-taken-index.php:264
+msgid "What are you looking for?"
+msgstr "What are you looking for?"
+
+#: includes/class-soli-taken-index.php:265
+msgid "Search taken"
+msgstr "Search taken"
+
+#: includes/class-soli-taken-index.php:266
+msgid "Search"
+msgstr "Search"
+
+#: includes/class-soli-taken-index.php:280
+msgid "Jump to letter"
+msgstr "Jump to letter"
+
+#: includes/class-soli-taken-index.php:310
+msgid "When"
+msgstr "When"
+
+#: includes/class-soli-taken-index.php:311
+msgid "Contact"
+msgstr "Contact"
+
+#: includes/class-soli-taken-index.php:338
+#: includes/class-soli-taken-index.php:339
+msgid "← Previous"
+msgstr "← Previous"
+
+#: includes/class-soli-taken-index.php:341
+#: includes/class-soli-taken-index.php:342
+msgid "Next →"
+msgstr "Next →"
+
+#: includes/class-soli-taken-index.php:346
+msgid "Pages"
+msgstr "Pages"
+
+#. translators: 1: letter range such as A–K, 2: current page, 3: total pages
+#: includes/class-soli-taken-index.php:349
+#, php-format
+msgid "%1$s · page %2$d of %3$d"
+msgstr "%1$s · page %2$d of %3$d"
+
+#. translators: %s: search term
+#: includes/class-soli-taken-index.php:358
+#, php-format
+msgid "No taken found for “%s”"
+msgstr "No taken found for “%s”"
+
+#: includes/class-soli-taken-index.php:359
+msgid "Try another word, or look through all taken."
+msgstr "Try another word, or look through all taken."
+
+#: includes/class-soli-taken-index.php:361
+msgid "Show all taken"
+msgstr "Show all taken"
+
+#: includes/class-soli-taken-pattern.php:27
+#: includes/class-soli-taken-post-type.php:25 build/index.js:1
 msgid "Taken"
 msgstr "Taken"
 
+#: includes/class-soli-taken-pattern.php:32
 #: includes/class-soli-taken-post-type.php:26
 msgid "Taak"
 msgstr "Taak"
+
+#: includes/class-soli-taken-pattern.php:33
+msgid "Description of a taak with when and whom to contact."
+msgstr "Description of a taak with when and whom to contact."
+
+#: includes/class-soli-taken-pattern.php:61
+msgid "What the taak is about and who already helps."
+msgstr "What the taak is about and who already helps."
+
+#: includes/class-soli-taken-pattern.php:64
+msgid "When:"
+msgstr "When:"
+
+#: includes/class-soli-taken-pattern.php:64
+msgid "Every Monday"
+msgstr "Every Monday"
+
+#: includes/class-soli-taken-pattern.php:65
+msgid "Contact:"
+msgstr "Contact:"
+
+#: includes/class-soli-taken-pattern.php:65
+msgid "Name"
+msgstr "Name"
 
 #: includes/class-soli-taken-post-type.php:27
 msgid "Add Taak"
@@ -72,18 +188,44 @@ msgstr "No Taken Found"
 msgid "Members-only tasks"
 msgstr "Members-only tasks"
 
-#: includes/class-soli-taken-visibility.php:80
+#: includes/class-soli-taken-visibility.php:87
 msgid "Taken are only visible to members. Please log in to view them."
 msgstr "Taken are only visible to members. Please log in to view them."
 
-#: includes/class-soli-taken-visibility.php:81
+#: includes/class-soli-taken-visibility.php:88
 msgid "Forbidden"
 msgstr "Forbidden"
-
-#: includes/class-soli-taken-visibility.php:107
-msgid "Taken are only visible to members."
-msgstr "Taken are only visible to members."
 
 #: build/index.js:1
 msgid "Displays the latest taken (members-only tasks)."
 msgstr "Displays the latest taken (members-only tasks)."
+
+#: build/taken-index/index.js:1
+msgid "Settings"
+msgstr "Settings"
+
+#: build/taken-index/index.js:1
+msgid "Taken per page"
+msgstr "Taken per page"
+
+#: build/taken-index/index.js:1
+msgid ""
+"A letter is never split over two pages, so a page can hold more when one "
+"letter has many taken."
+msgstr ""
+"A letter is never split over two pages, so a page can hold more when one "
+"letter has many taken."
+
+#: build/taken-index/block.json
+msgctxt "block title"
+msgid "Taken A–Z"
+msgstr "Taken A–Z"
+
+#: build/taken-index/block.json
+msgctxt "block description"
+msgid ""
+"Searchable A–Z index of all taken, paginated by letter. Only visible to "
+"logged-in members."
+msgstr ""
+"Searchable A–Z index of all taken, paginated by letter. Only visible to "
+"logged-in members."
