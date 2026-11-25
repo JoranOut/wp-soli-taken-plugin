@@ -5,8 +5,8 @@
   "author": "Joran Out",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "build": "wp-scripts build index=./src/index.js taken-index/index=./src/taken-index/index.js",
-    "start": "wp-scripts start index=./src/index.js taken-index/index=./src/taken-index/index.js",
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
     "wp-env:start": "node bin/wp-env-start.js",
     "wp-env:stop": "wp-env stop",
     "publish": "npm run build && npm run i18n:build && node ./publish.js",

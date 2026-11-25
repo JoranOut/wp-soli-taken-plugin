@@ -33,8 +33,8 @@ wp-soli-taken-plugin.php                 constants, textdomain, GitHub updater
     └── taken-index/    → build/taken-index/    # block.json, editor (ServerSideRender), style, render.php
 ```
 
-The build lists its two entries explicitly in `package.json`; adding a
-`block.json` under `src/` would otherwise make wp-scripts drop `src/index.js`.
+`webpack.config.js` adds `src/index.js` as an extra entry. Without it wp-scripts
+builds only the `block.json` blocks and drops the variation script.
 
 ## Visibility policy (authoritative)
 
