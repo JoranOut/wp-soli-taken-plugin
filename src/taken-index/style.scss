@@ -1,0 +1,227 @@
+.wp-block-soli-taken-taken-index {
+	--taken-accent: var(--wp--preset--color--maroon, #7a1f2b);
+	--taken-letter: var(--wp--preset--color--gold, #c9a24a);
+	--taken-ink: var(--wp--preset--color--ink, #1a1a2e);
+	--taken-muted: var(--wp--preset--color--muted, #5a5a5e);
+	--taken-line: var(--wp--preset--color--line, #e6e2da);
+	--taken-faint: var(--wp--preset--color--sand, #e8dcc6);
+	--taken-surface: var(--wp--preset--color--white, #fff);
+	--taken-on-accent: var(--wp--preset--color--cream, #faf6ee);
+	--taken-mark: #f3e2b3;
+	--taken-display: var(--wp--preset--font-family--display, Georgia, serif);
+	--taken-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+	color: var(--taken-ink);
+
+	mark {
+		background: var(--taken-mark);
+		color: inherit;
+		padding: 0 0.1em;
+		border-radius: 2px;
+	}
+
+	.taken-index__head {
+		display: grid;
+		justify-items: center;
+		text-align: center;
+		gap: 1rem;
+		padding-block: 1.5rem 1.25rem;
+	}
+
+	.taken-index__search {
+		width: min(520px, 100%);
+		display: flex;
+		align-items: center;
+		padding: 6px 6px 6px 22px;
+		border: 1.5px solid var(--taken-ink);
+		border-radius: 999px;
+		background: var(--taken-surface);
+
+		&:focus-within {
+			border-color: var(--taken-accent);
+		}
+
+		input[type="search"] {
+			flex: 1;
+			min-width: 0;
+			border: 0;
+			background: transparent;
+			padding: 8px 0;
+			font: 500 1.2rem/1.3 var(--taken-display);
+			color: var(--taken-ink);
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		button {
+			flex: none;
+			width: 44px;
+			height: 44px;
+			border: 0;
+			border-radius: 50%;
+			background: var(--taken-ink);
+			color: var(--taken-on-accent);
+			cursor: pointer;
+			display: grid;
+			place-items: center;
+		}
+	}
+
+	.taken-index__summary {
+		margin: 0;
+		color: var(--taken-muted);
+		font-style: italic;
+
+		a {
+			color: var(--taken-accent);
+			margin-left: 0.5em;
+		}
+	}
+
+	.taken-index__az {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 2px;
+		margin: 0 auto 1.75rem;
+		padding: 0;
+		list-style: none;
+
+		a,
+		span {
+			display: grid;
+			place-items: center;
+			width: 28px;
+			height: 32px;
+			border-radius: 4px;
+			font: 600 1rem/1 var(--taken-display);
+			text-decoration: none;
+			color: var(--taken-ink);
+		}
+
+		span {
+			color: var(--taken-faint);
+		}
+
+		.is-current {
+			background: var(--taken-accent);
+			color: var(--taken-on-accent);
+		}
+	}
+
+	.taken-index__cols {
+		columns: 2 320px;
+		column-gap: 48px;
+	}
+
+	.taken-index__letter {
+		break-inside: avoid;
+		margin-bottom: 1.25rem;
+
+		h2 {
+			margin: 0 0 4px;
+			padding-bottom: 6px;
+			border-bottom: 1px solid var(--taken-line);
+			font: 700 2.75rem/1 var(--taken-display);
+			color: var(--taken-letter);
+		}
+	}
+
+	.taken-index__item {
+		break-inside: avoid;
+		padding: 10px 0;
+		border-bottom: 1px dashed var(--taken-line);
+
+		h3 {
+			margin: 0 0 2px;
+			font-size: 1.125rem;
+			line-height: 1.3;
+			font-weight: 600;
+
+			a {
+				color: inherit;
+				text-decoration: none;
+
+				&:hover,
+				&:focus-visible {
+					color: var(--taken-accent);
+				}
+			}
+		}
+
+		p {
+			margin: 0 0 4px;
+			color: var(--taken-muted);
+			font-size: 0.95rem;
+		}
+	}
+
+	.taken-index__meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px 16px;
+		margin: 0;
+		font: 0.75rem/1.5 var(--taken-mono);
+		color: var(--taken-muted);
+
+		div {
+			display: flex;
+			gap: 0.5em;
+		}
+
+		dt {
+			font-weight: 500;
+			color: var(--taken-accent);
+		}
+
+		dd {
+			margin: 0;
+		}
+	}
+
+	.taken-index__none {
+		text-align: center;
+		padding: 2rem 1rem;
+		color: var(--taken-muted);
+
+		strong {
+			display: block;
+			margin-bottom: 6px;
+			font: 500 1.4rem/1.3 var(--taken-display);
+			color: var(--taken-ink);
+		}
+
+		a {
+			color: var(--taken-accent);
+		}
+	}
+
+	.taken-index__pager {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		gap: 12px;
+		margin-top: 1.75rem;
+		padding-top: 1.1rem;
+		border-top: 1px solid var(--taken-line);
+
+		a,
+		.is-disabled {
+			font: italic 500 1.2rem var(--taken-display);
+			color: var(--taken-accent);
+			text-decoration: none;
+		}
+
+		.is-disabled {
+			opacity: 0.35;
+		}
+
+		.taken-index__position {
+			font: 0.75rem var(--taken-mono);
+			color: var(--taken-muted);
+		}
+	}
+}

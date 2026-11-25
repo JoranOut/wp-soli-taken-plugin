@@ -41,4 +41,13 @@ async function getRestNonce(page) {
 	return (await response.text()).trim();
 }
 
-module.exports = { wpCli, seedFixtures, loginAsAdmin, getRestNonce };
+/**
+ * Seed the A–Z index taken (plus the base fixtures) and return { pageUrl }.
+ */
+function seedIndexFixtures() {
+	seedFixtures();
+	const output = wpCli(`eval-file ${PLUGIN_PATH}/e2e/fixtures/seed-index.php --user=admin`);
+	return JSON.parse(output.slice(output.indexOf('{')));
+}
+
+module.exports = { wpCli, seedFixtures, seedIndexFixtures, loginAsAdmin, getRestNonce };

@@ -1,10 +1,12 @@
 const { test, expect } = require('@playwright/test');
-const { seedFixtures, loginAsAdmin } = require('./helpers');
+const { seedFixtures, seedIndexFixtures, loginAsAdmin } = require('./helpers');
 
 let fixtures;
+let indexFixtures;
 
 test.beforeAll(() => {
 	fixtures = seedFixtures();
+	indexFixtures = seedIndexFixtures();
 });
 
 /**
@@ -17,7 +19,7 @@ test.beforeAll(() => {
  */
 const FATAL = /Fatal error|Parse error/i;
 const OWN_FILES =
-	/(Warning|Notice|Deprecated):[^\n]*(wp-soli-taken-plugin\.php|class-soli-taken-(post-type|visibility)\.php)/i;
+	/(Warning|Notice|Deprecated):[^\n]*(wp-soli-taken-plugin\.php|class-soli-taken-(post-type|visibility|pattern|index)\.php|taken-index[/\\]render\.php)/i;
 
 async function expectNoPhpErrors(page) {
 	// textContent, never innerText. innerText reflects *rendered* text and
@@ -75,6 +77,12 @@ test.describe('renders without PHP errors', () => {
 	test('on a page with the taken query loop', async ({ page }) => {
 		await page.goto(fixtures.pageUrl);
 		await expect(page.locator('body')).toContainText('Geheime taak voor leden');
+		await expectNoPhpErrors(page);
+	});
+
+	test('on a page with the taken A–Z index', async ({ page }) => {
+		await page.goto(`${indexFixtures.pageUrl}?taken_zoek=ploeg&taken_pagina=2`);
+		await expect(page.locator('.taken-index__item').first()).toBeVisible();
 		await expectNoPhpErrors(page);
 	});
 

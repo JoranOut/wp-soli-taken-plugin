@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-07T19:44:58+00:00\n"
+"POT-Creation-Date: 2026-11-24T14:04:49+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: soli-taken\n"
@@ -29,13 +29,126 @@ msgstr ""
 msgid "Joran Out"
 msgstr ""
 
+#: includes/class-soli-taken-index.php:45
+#: includes/class-soli-taken-visibility.php:114
+msgid "Taken are only visible to members."
+msgstr ""
+
+#: includes/class-soli-taken-index.php:47
+msgid "Log in"
+msgstr ""
+
+#. translators: %d: number of taken
+#: includes/class-soli-taken-index.php:244
+#, php-format
+msgid "%d taak"
+msgid_plural "All %d taken, alphabetical"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of results, 2: search term
+#: includes/class-soli-taken-index.php:247
+#, php-format
+msgid "%1$d taak for “%2$s”"
+msgid_plural "%1$d taken for “%2$s”"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-soli-taken-index.php:248
+msgid "Show all"
+msgstr ""
+
+#: includes/class-soli-taken-index.php:264
+msgid "What are you looking for?"
+msgstr ""
+
+#: includes/class-soli-taken-index.php:265
+msgid "Search taken"
+msgstr ""
+
+#: includes/class-soli-taken-index.php:266
+msgid "Search"
+msgstr ""
+
+#: includes/class-soli-taken-index.php:280
+msgid "Jump to letter"
+msgstr ""
+
+#: includes/class-soli-taken-index.php:310
+msgid "When"
+msgstr ""
+
+#: includes/class-soli-taken-index.php:311
+msgid "Contact"
+msgstr ""
+
+#: includes/class-soli-taken-index.php:338
+#: includes/class-soli-taken-index.php:339
+msgid "← Previous"
+msgstr ""
+
+#: includes/class-soli-taken-index.php:341
+#: includes/class-soli-taken-index.php:342
+msgid "Next →"
+msgstr ""
+
+#: includes/class-soli-taken-index.php:346
+msgid "Pages"
+msgstr ""
+
+#. translators: 1: letter range such as A–K, 2: current page, 3: total pages
+#: includes/class-soli-taken-index.php:349
+#, php-format
+msgid "%1$s · page %2$d of %3$d"
+msgstr ""
+
+#. translators: %s: search term
+#: includes/class-soli-taken-index.php:358
+#, php-format
+msgid "No taken found for “%s”"
+msgstr ""
+
+#: includes/class-soli-taken-index.php:359
+msgid "Try another word, or look through all taken."
+msgstr ""
+
+#: includes/class-soli-taken-index.php:361
+msgid "Show all taken"
+msgstr ""
+
+#: includes/class-soli-taken-pattern.php:27
 #: includes/class-soli-taken-post-type.php:25
 #: build/index.js:1
 msgid "Taken"
 msgstr ""
 
+#: includes/class-soli-taken-pattern.php:32
 #: includes/class-soli-taken-post-type.php:26
 msgid "Taak"
+msgstr ""
+
+#: includes/class-soli-taken-pattern.php:33
+msgid "Description of a taak with when and whom to contact."
+msgstr ""
+
+#: includes/class-soli-taken-pattern.php:61
+msgid "What the taak is about and who already helps."
+msgstr ""
+
+#: includes/class-soli-taken-pattern.php:64
+msgid "When:"
+msgstr ""
+
+#: includes/class-soli-taken-pattern.php:64
+msgid "Every Monday"
+msgstr ""
+
+#: includes/class-soli-taken-pattern.php:65
+msgid "Contact:"
+msgstr ""
+
+#: includes/class-soli-taken-pattern.php:65
+msgid "Name"
 msgstr ""
 
 #: includes/class-soli-taken-post-type.php:27
@@ -70,18 +183,36 @@ msgstr ""
 msgid "Members-only tasks"
 msgstr ""
 
-#: includes/class-soli-taken-visibility.php:80
+#: includes/class-soli-taken-visibility.php:87
 msgid "Taken are only visible to members. Please log in to view them."
 msgstr ""
 
-#: includes/class-soli-taken-visibility.php:81
+#: includes/class-soli-taken-visibility.php:88
 msgid "Forbidden"
-msgstr ""
-
-#: includes/class-soli-taken-visibility.php:107
-msgid "Taken are only visible to members."
 msgstr ""
 
 #: build/index.js:1
 msgid "Displays the latest taken (members-only tasks)."
+msgstr ""
+
+#: build/taken-index/index.js:1
+msgid "Settings"
+msgstr ""
+
+#: build/taken-index/index.js:1
+msgid "Taken per page"
+msgstr ""
+
+#: build/taken-index/index.js:1
+msgid "A letter is never split over two pages, so a page can hold more when one letter has many taken."
+msgstr ""
+
+#: build/taken-index/block.json
+msgctxt "block title"
+msgid "Taken A–Z"
+msgstr ""
+
+#: build/taken-index/block.json
+msgctxt "block description"
+msgid "Searchable A–Z index of all taken, paginated by letter. Only visible to logged-in members."
 msgstr ""

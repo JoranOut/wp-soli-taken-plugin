@@ -57,6 +57,8 @@ class Post_Type {
 			'rewrite'             => array( 'slug' => 'taken' ),
 			'show_in_rest'        => true,
 			'rest_base'           => self::REST_BASE,
+			// New taken start from the "Taak" pattern; editors may change everything.
+			'template'            => array( array( 'core/pattern', array( 'slug' => Pattern::SLUG ) ) ),
 		);
 
 		register_post_type( self::POST_TYPE, $args );

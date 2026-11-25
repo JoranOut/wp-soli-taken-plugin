@@ -23,6 +23,8 @@ define( 'SOLI_TAKEN__PLUGIN_VERSION', '0.1.0' );
 
 require_once SOLI_TAKEN__PLUGIN_DIR_PATH . 'includes/class-soli-taken-post-type.php';
 require_once SOLI_TAKEN__PLUGIN_DIR_PATH . 'includes/class-soli-taken-visibility.php';
+require_once SOLI_TAKEN__PLUGIN_DIR_PATH . 'includes/class-soli-taken-pattern.php';
+require_once SOLI_TAKEN__PLUGIN_DIR_PATH . 'includes/class-soli-taken-index.php';
 
 add_action( 'init', function () {
 	load_plugin_textdomain( 'soli-taken', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
@@ -73,6 +75,14 @@ register_deactivation_hook( __FILE__, function () {
 	unregister_post_type( Post_Type::POST_TYPE );
 	flush_rewrite_rules();
 } );
+
+// "Taak" block pattern, the default content of a new taak
+$soli_taken_pattern = new Pattern();
+$soli_taken_pattern->init();
+
+// Searchable A–Z index block
+$soli_taken_index = new Taken_Index();
+$soli_taken_index->init();
 
 // Keep taken invisible to not-logged-in visitors
 $soli_taken_visibility = new Visibility();

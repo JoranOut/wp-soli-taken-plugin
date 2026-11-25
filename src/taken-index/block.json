@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "soli-taken/taken-index",
+	"version": "0.1.0",
+	"title": "Taken A–Z",
+	"category": "widgets",
+	"icon": "clipboard",
+	"description": "Searchable A–Z index of all taken, paginated by letter. Only visible to logged-in members.",
+	"attributes": {
+		"perPage": {
+			"type": "number",
+			"default": 10
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"textdomain": "soli-taken",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

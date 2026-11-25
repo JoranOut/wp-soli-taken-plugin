@@ -5,8 +5,8 @@
   "author": "Joran Out",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "build": "wp-scripts build",
-    "start": "wp-scripts start",
+    "build": "wp-scripts build index=./src/index.js taken-index/index=./src/taken-index/index.js",
+    "start": "wp-scripts start index=./src/index.js taken-index/index=./src/taken-index/index.js",
     "wp-env:start": "node bin/wp-env-start.js",
     "wp-env:stop": "wp-env stop",
     "publish": "npm run build && npm run i18n:build && node ./publish.js",
@@ -27,9 +27,14 @@
     "requiresAtLeast": "6.9"
   },
   "devDependencies": {
+    "@wordpress/block-editor": "^20.1.0",
+    "@wordpress/blocks": "^17.2.0",
+    "@wordpress/components": "^45.0.0",
     "@wordpress/e2e-test-utils-playwright": "^1.14.0",
     "@wordpress/env": "^12.1.0",
+    "@wordpress/i18n": "^7.2.0",
     "@wordpress/scripts": "^31.0.0",
+    "@wordpress/server-side-render": "^7.2.0",
     "archiver": "^7.0.1"
   }
 }
